@@ -189,6 +189,19 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .mNavBtn:hover{color:var(--gd);border-color:var(--gd)}
 .mNavBtn.act{background:rgba(90,45,122,.2);border-color:#b06aff;color:#b06aff}
 
+/* COMPONENTS */
+.compRow{display:flex;align-items:flex-start;gap:.6rem;background:linear-gradient(90deg,var(--sm),var(--st));border:1px solid rgba(201,168,76,.22);border-radius:6px;padding:.55rem .75rem;font-size:.82rem;line-height:1.4;transition:.2s}
+.compRow:hover{border-color:var(--gd);background:linear-gradient(90deg,rgba(201,168,76,.06),var(--sm))}
+.crMat{font-family:'Cinzel',serif;font-size:.84rem;color:var(--gd);min-width:160px;flex-shrink:0}
+.crSpell{flex:1;color:var(--txt)}
+.crVal{color:var(--gl);font-size:.8rem;white-space:nowrap;min-width:80px;text-align:right}
+.crMeta{display:flex;gap:.3rem;flex-wrap:wrap;align-items:center}
+.crCon{background:rgba(139,26,26,.3);border:1px solid var(--cr);border-radius:3px;padding:.1rem .3rem;font-size:.6rem;color:#ff9090;font-family:'Cinzel',serif}
+.crCls{display:inline-block;padding:.1rem .3rem;border-radius:3px;font-size:.6rem;font-family:'Cinzel',serif;background:rgba(42,74,127,.3);border:1px solid var(--ab);color:#8ab4ff;white-space:nowrap}
+.crNotes{color:var(--il);font-size:.77rem;font-style:italic;margin-top:.2rem}
+.sch-Abjuration{color:#8ab4ff}.sch-Conjuration{color:#8affba}.sch-Divination{color:#ffe88a}
+.sch-Enchantment{color:#ffaaff}.sch-Evocation{color:#ffa07a}.sch-Illusion{color:#c8a0ff}
+.sch-Necromancy{color:#a0ffa0}.sch-Transmutation{color:#ffd98a}
 /* WISH LIST */
 .wlSearchWrap{position:relative;margin-bottom:.5rem}
 .wlSearchWrap input{width:100%;background:var(--sl);border:1px solid var(--gd2);border-radius:4px;color:var(--txt);font-family:'EB Garamond',serif;font-size:.9rem;padding:.4rem .7rem;outline:none}
@@ -278,6 +291,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
   <button class="mTab" data-tab="scrolls" onclick="showTab('scrolls')">📜 Spell Scrolls</button>
   <button class="mTab" data-tab="potions" onclick="showTab('potions')">🧪 Potions</button>
   <button class="mTab special" data-tab="magic" onclick="showTab('magic')">✨ Magic</button>
+  <button class="mTab" data-tab="components" onclick="showTab('components')">🧪 Components</button>
   <button class="mTab" data-tab="sell" onclick="showTab('sell')">💰 Sell / Repair</button>
   <button class="mTab" data-tab="wishlist" onclick="showTab('wishlist')">🎁 Wish List</button>
 </div>
@@ -363,6 +377,24 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
           <div class="vaultNote">✦ These special items are personally curated by the shopkeeper. Availability is at the DM's discretion.</div>
           <div id="vaultGrid"></div>
         </div>
+      </div>
+
+      <!-- COMPONENTS -->
+      <div class="page" id="pgComponents">
+        <div class="controls">
+          <div class="sWrap"><input type="text" id="compSearch" placeholder="Search materials or spells..." oninput="renderComponents()"></div>
+          <div class="fTabs" id="compSchBtns"></div>
+          <div class="fTabs" id="compClsBtns"></div>
+          <div class="sortRow">
+            <select id="compSort" onchange="renderComponents()">
+              <option value="mat">Material A→Z</option>
+              <option value="sp">Spell A→Z</option>
+              <option value="lv">Level ↑</option>
+            </select>
+          </div>
+          <span class="resultCount" id="compCount"></span>
+        </div>
+        <div id="compGrid" class="rowList"></div>
       </div>
 
       <!-- SELL / REPAIR -->
@@ -529,14 +561,15 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 
 <script>
 // ── STATE ──────────────────────────────────────────────────────────────────────
-let D=null, cart={}, curDiscount=0;
-let siCat='All', scLv='All', potRar='All', miRar='All';
+let D=null, C=null, cart={}, curDiscount=0;
+let siCat='All', scLv='All', potRar='All', miRar='All', compSch='All', compCls='All';
 let inventory=JSON.parse(localStorage.getItem('gg_inv')||'[]');
 let wishlist=JSON.parse(localStorage.getItem('gg_wish')||'[]');
 let sellListV=[], sellListJ=[], spreeItems=[], wlSelectedItem=null;
 let repairable=[];
 
 // ── INIT ───────────────────────────────────────────────────────────────────────
+fetch('components.json').then(r=>r.json()).then(d=>{C=d;buildCompFilters();}).catch(()=>{});
 fetch('shop_data.json')
   .then(r=>r.json())
   .then(d=>{
@@ -610,7 +643,7 @@ function parsePrice(p){
 function esc(item){ return JSON.stringify(item).replace(/"/g,'&quot;'); }
 
 // ── TABS ──────────────────────────────────────────────────────────────────────
-const PAGES={simple:'pgSimple',scrolls:'pgScrolls',potions:'pgPotions',magic:'pgMagic',sell:'pgSell',wishlist:'pgWishlist'};
+const PAGES={simple:'pgSimple',scrolls:'pgScrolls',potions:'pgPotions',magic:'pgMagic',components:'pgComponents',sell:'pgSell',wishlist:'pgWishlist'};
 function showTab(k){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('act'));
   document.querySelectorAll('.mTab').forEach(b=>b.classList.toggle('act', b.dataset.tab===k));
@@ -619,6 +652,7 @@ function showTab(k){
   if(k==='scrolls') renderScrolls();
   if(k==='potions') renderPotions();
   if(k==='magic') renderMagic();
+  if(k==='components') renderComponents();
 }
 function showMagicPage(k,btn){
   document.querySelectorAll('.magicPage').forEach(p=>p.classList.remove('act'));
@@ -1161,6 +1195,47 @@ function renderVault(){
     ${item.d?`<span class="vrDesc">${item.d.substring(0,180)}${item.d.length>180?'…':''}</span>`:''}
     <span class="vrTag">★ Vault</span>
   </div>`).join('');
+}
+
+// ── RENDER COMPONENTS ─────────────────────────────────────────────────────────
+const SCHOOLS=['Abjuration','Conjuration','Divination','Enchantment','Evocation','Illusion','Necromancy','Transmutation'];
+const CLS_FULL={Art:'Artificer',Bar:'Bard',Cle:'Cleric',Dru:'Druid',Pal:'Paladin',Ran:'Ranger',Sor:'Sorcerer',War:'Warlock',Wiz:'Wizard'};
+function buildCompFilters(){
+  document.getElementById('compSchBtns').innerHTML=['All',...SCHOOLS].map(s=>`<button class="fBtn${s==='All'?' act':''}" onclick="setCompSch('${s}',this)">${s==='All'?'All':s.slice(0,4)}</button>`).join('');
+  document.getElementById('compClsBtns').innerHTML=['All',...Object.keys(CLS_FULL)].map(c=>`<button class="fBtn${c==='All'?' act':''}" onclick="setCompCls('${c}',this)">${c}</button>`).join('');
+}
+function setCompSch(s,btn){compSch=s;setFilterBtn('#compSchBtns',btn);renderComponents();}
+function setCompCls(c,btn){compCls=c;setFilterBtn('#compClsBtns',btn);renderComponents();}
+function renderComponents(){
+  if(!C){document.getElementById('compGrid').innerHTML='<div class="loadMsg">Loading components...</div>';return;}
+  const q=(document.getElementById('compSearch').value||'').toLowerCase();
+  const sort=document.getElementById('compSort').value;
+  let items=C.filter(i=>{
+    if(compSch!=='All'&&i.sch!==compSch) return false;
+    if(compCls!=='All'&&!(i.cls||[]).includes(compCls)) return false;
+    if(q&&!i.m.toLowerCase().includes(q)&&!i.sp.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  if(sort==='mat') items.sort((a,b)=>a.m.localeCompare(b.m));
+  else if(sort==='sp') items.sort((a,b)=>a.sp.localeCompare(b.sp));
+  else items.sort((a,b)=>(a.lv??99)-(b.lv??99)||a.sp.localeCompare(b.sp));
+  document.getElementById('compCount').textContent=`${items.length} components`;
+  document.getElementById('compGrid').innerHTML=items.map(i=>{
+    const cls=(i.cls||[]).map(c=>`<span class="crCls">${c}</span>`).join('');
+    const con=i.c&&i.c!=='N'?`<span class="crCon">Consumed${i.c!=='Y'?': '+i.c:''}</span>`:'';
+    const lv=i.lv!=null?`<span class="lvPill lv${i.lv}">${i.lv}</span>`:'';
+    const src=i.src?`<span class="cBadge bCommon">${i.src}${i.pg?' p.'+i.pg:''}</span>`:'';
+    const sch=i.sch?`<span class="sch-${i.sch}" style="font-size:.7rem;font-family:Cinzel,serif">${i.sch}</span>`:'';
+    return `<div class="compRow"><div style="flex:1;min-width:0">
+      <div style="display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap">
+        <span class="crMat">${i.m}</span>
+        <span class="crSpell">${i.sp}</span>
+        <span class="crVal">${i.v}</span>
+      </div>
+      <div class="crMeta">${lv}${sch}${src}${con}${cls}</div>
+      ${i.nt?`<div class="crNotes">${i.nt}</div>`:''}
+    </div></div>`;
+  }).join('')||'<div class="emptyMsg">No components found.</div>';
 }
 
 // ── MODAL & DROPDOWN CLOSE HANDLERS ──────────────────────────────────────────
