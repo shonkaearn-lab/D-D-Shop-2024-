@@ -62,7 +62,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .sortRow button:hover{border-color:var(--gd)}
 .resultCount{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gd2);margin-left:auto}
 
-/* ROW LAYOUT (replacing grid for item lists) */
+/* ROW LAYOUT */
 .rowList{display:flex;flex-direction:column;gap:.35rem}
 .row-item{display:flex;align-items:center;gap:.75rem;background:linear-gradient(90deg,var(--sm),var(--st));border:1px solid rgba(201,168,76,.25);border-radius:6px;padding:.5rem .75rem;transition:.2s;position:relative}
 .row-item:hover{border-color:var(--gd);background:linear-gradient(90deg,rgba(201,168,76,.07),var(--sm))}
@@ -115,7 +115,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .btnGr{background:rgba(0,100,30,.5);border:1px solid #1a6a2a;color:#afffaf}.btnGr:hover{background:#1a6a2a}
 .btnPurp{background:rgba(90,45,122,.4);border:1px solid #7a2aaa;color:#c36aff}.btnPurp:hover{background:rgba(90,45,122,.7)}
 
-/* INVENTORY SECTION in sidebar */
+/* INVENTORY */
 .invBox{background:var(--sm);border:1px solid rgba(90,45,122,.6);border-radius:8px;padding:1rem;margin-top:1rem}
 .invTitle{font-family:'Cinzel Decorative',serif;font-size:.9rem;color:#c36aff;margin-bottom:.8rem;display:flex;justify-content:space-between;align-items:center}
 .invItem{display:flex;align-items:center;gap:.4rem;padding:.3rem 0;border-bottom:1px solid rgba(90,45,122,.2);font-size:.82rem}
@@ -144,14 +144,13 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .barterResult{margin-top:1rem;padding:1rem;background:rgba(0,0,0,.3);border-radius:6px;border:1px solid var(--gd2);font-size:.9rem;line-height:1.6}
 .discountGood{color:#5fd87a}.discountBad{color:#ff7070}.discountNone{color:var(--gd2)}
 
-/* BARTER RULES TABLE */
+/* BARTER TABLE */
 .barterTable{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.82rem}
 .barterTable th{font-family:'Cinzel',serif;color:var(--gd2);font-size:.72rem;padding:.3rem .5rem;border-bottom:1px solid var(--gd2);text-align:left}
 .barterTable td{padding:.3rem .5rem;border-bottom:1px solid rgba(201,168,76,.1);color:var(--txt)}
 .barterTable td:last-child{color:var(--gl);font-weight:600}
 
 /* TOOLTIP */
-.tooltip-wrap{position:relative;display:inline}
 .tooltip-box{display:none;position:fixed;z-index:9999;background:linear-gradient(135deg,#1a1208,#271e14);border:1px solid var(--gd);border-radius:8px;padding:.8rem 1rem;max-width:300px;font-size:.82rem;line-height:1.5;color:var(--txt);box-shadow:0 8px 30px rgba(0,0,0,.8);pointer-events:none}
 .tooltip-box.visible{display:block}
 .tooltip-title{font-family:'Cinzel',serif;color:var(--gd);font-size:.9rem;margin-bottom:.3rem}
@@ -160,10 +159,11 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .sellPageWrap{display:flex;flex-direction:column;gap:1.5rem;max-width:900px}
 .sellSection{background:var(--sm);border:1px solid var(--gd2);border-radius:8px;padding:1rem}
 .sellSectionTitle{font-family:'Cinzel Decorative',serif;font-size:.95rem;color:var(--gd);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.sellSectionTitle small{font-family:'EB Garamond',serif;font-size:.7rem;color:var(--gd2);font-weight:normal}
 .sellManualRow{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem}
-.sellManualRow input{background:var(--sl);border:1px solid var(--gd2);border-radius:4px;color:var(--txt);font-family:'EB Garamond',serif;font-size:.9rem;padding:.35rem .6rem;outline:none;flex:1;min-width:120px}
+.sellManualRow input,.sellManualRow select{background:var(--sl);border:1px solid var(--gd2);border-radius:4px;color:var(--txt);font-family:'EB Garamond',serif;font-size:.9rem;padding:.35rem .6rem;outline:none}
+.sellManualRow input{flex:1;min-width:120px}
 .sellManualRow input:focus{border-color:var(--gd)}
-.sellManualRow select{background:var(--sl);border:1px solid var(--gd2);border-radius:4px;color:var(--txt);font-family:'EB Garamond',serif;font-size:.9rem;padding:.35rem .6rem;cursor:pointer;outline:none}
 .sellItemRow{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;border-bottom:1px solid rgba(201,168,76,.12);font-size:.85rem}
 .sellItemRow:last-child{border-bottom:none}
 .sellItemRow .siName{flex:1;color:var(--txt)}
@@ -177,13 +177,13 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .sellTotal{margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--gd2);display:flex;justify-content:space-between;font-family:'Cinzel',serif;font-size:.9rem;color:var(--gd)}
 .noItemsMsg{color:var(--il);font-style:italic;padding:.8rem 0;font-size:.85rem}
 
-/* REPAIR SECTION */
+/* REPAIR */
 .repairRow{display:flex;gap:.5rem;align-items:center;font-size:.82rem;padding:.3rem .6rem;border-bottom:1px solid rgba(201,168,76,.1)}
 .repairRow:last-child{border-bottom:none}
 .repairRow .rName{flex:1;color:var(--txt)}
 .repairRow .rCost{color:#ffd98a;min-width:70px;text-align:right}
 
-/* MAGIC TABS PAGE */
+/* MAGIC TABS */
 .magicNav{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
 .mNavBtn{padding:.4rem .9rem;background:transparent;border:1px solid var(--gd2);border-radius:4px;color:var(--gd2);font-family:'Cinzel',serif;font-size:.75rem;cursor:pointer;transition:.2s}
 .mNavBtn:hover{color:var(--gd);border-color:var(--gd)}
@@ -215,7 +215,6 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .miLvlTable td{padding:.35rem .6rem;border-bottom:1px solid rgba(201,168,76,.1);text-align:center;color:var(--txt)}
 .miLvlTable td.empty{color:var(--il);font-style:italic}
 .miLvlTable tr:hover td{background:rgba(201,168,76,.04)}
-.rarTag{display:inline-block;padding:.1rem .4rem;border-radius:3px;font-size:.75rem}
 
 /* SHOPPING SPREE */
 .spreeBtn{background:linear-gradient(135deg,rgba(139,26,26,.4),rgba(201,168,76,.15));border:1px solid var(--gd2);color:var(--gd);font-family:'Cinzel',serif;font-size:.75rem;padding:.4rem .9rem;border-radius:4px;cursor:pointer;transition:.2s}
@@ -230,18 +229,25 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 .spreeProgress{height:8px;background:var(--sl);border-radius:4px;overflow:hidden;margin:.5rem 0}
 .spreeProgressBar{height:100%;background:linear-gradient(90deg,var(--gd2),var(--gd));border-radius:4px;transition:width .5s}
 
-.emptyMsg{color:var(--il);font-style:italic;text-align:center;padding:2rem}
-.loadMsg{text-align:center;padding:3rem;color:var(--gd2);font-family:'Cinzel',serif}
-.loadMsg .spin{display:inline-block;animation:spin 1.2s linear infinite;font-size:1.5rem}
-@keyframes spin{to{transform:rotate(360deg)}}
-.page{display:none}.page.act{display:block}
-.magicPage{display:none}.magicPage.act{display:block}
-
 /* VAULT */
 .vaultRow{display:flex;align-items:flex-start;gap:.75rem;background:linear-gradient(90deg,rgba(90,45,122,.1),var(--st));border:1px solid rgba(90,45,122,.4);border-radius:6px;padding:.6rem .75rem;margin-bottom:.3rem}
 .vaultRow .vrName{font-family:'Cinzel',serif;font-size:.88rem;color:#c36aff;flex:0 0 180px}
 .vaultRow .vrDesc{font-size:.8rem;color:var(--il);flex:1;line-height:1.4}
 .vaultRow .vrTag{font-family:'Cinzel',serif;font-size:.65rem;color:#b06aff;opacity:.7}
+
+/* VAULT DESCRIPTION */
+.vaultNote{color:var(--gd2);font-family:'Cinzel',serif;font-size:.8rem;margin-bottom:.8rem;font-style:italic}
+
+.emptyMsg{color:var(--il);font-style:italic;text-align:center;padding:2rem}
+.loadMsg{text-align:center;padding:3rem;color:var(--gd2);font-family:'Cinzel',serif}
+.loadMsg .spin{display:inline-block;animation:spin 1.2s linear infinite;font-size:1.5rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* unified hidden/active for both .page and .magicPage */
+.page,.magicPage{display:none}
+.page.act,.magicPage.act{display:block}
+
+/* WISHLIST SELECT - extracted from inline */
+.wlStatusSel{background:var(--sl);border:1px solid var(--gd2);border-radius:4px;color:var(--txt);font-family:'EB Garamond',serif;font-size:.9rem;padding:.35rem .6rem;cursor:pointer;outline:none}
 
 @media(max-width:860px){
   .layout{flex-direction:column}
@@ -268,12 +274,12 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 </header>
 
 <div class="mainTabs" id="mainTabs">
-  <button class="mTab act" onclick="showTab('simple')">⚔️ Simple Items</button>
-  <button class="mTab" onclick="showTab('scrolls')">📜 Spell Scrolls</button>
-  <button class="mTab" onclick="showTab('potions')">🧪 Potions</button>
-  <button class="mTab special" onclick="showTab('magic')">✨ Magic</button>
-  <button class="mTab" onclick="showTab('sell')">💰 Sell / Repair</button>
-  <button class="mTab" onclick="showTab('wishlist')">🎁 Wish List</button>
+  <button class="mTab act" data-tab="simple" onclick="showTab('simple')">⚔️ Simple Items</button>
+  <button class="mTab" data-tab="scrolls" onclick="showTab('scrolls')">📜 Spell Scrolls</button>
+  <button class="mTab" data-tab="potions" onclick="showTab('potions')">🧪 Potions</button>
+  <button class="mTab special" data-tab="magic" onclick="showTab('magic')">✨ Magic</button>
+  <button class="mTab" data-tab="sell" onclick="showTab('sell')">💰 Sell / Repair</button>
+  <button class="mTab" data-tab="wishlist" onclick="showTab('wishlist')">🎁 Wish List</button>
 </div>
 
 <div class="shopWrap">
@@ -327,7 +333,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
         <div class="rowList" id="potGrid"></div>
       </div>
 
-      <!-- MAGIC (special) -->
+      <!-- MAGIC -->
       <div class="page" id="pgMagic">
         <div class="magicNav">
           <button class="mNavBtn act" onclick="showMagicPage('items',this)">🔮 Magic Items</button>
@@ -354,9 +360,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
           <div class="rowList" id="svcGrid"></div>
         </div>
         <div class="magicPage" id="mpVault">
-          <div style="color:var(--gd2);font-family:'Cinzel',serif;font-size:.8rem;margin-bottom:.8rem;font-style:italic">
-            ✦ These special items are personally curated by the shopkeeper. Availability is at the DM's discretion.
-          </div>
+          <div class="vaultNote">✦ These special items are personally curated by the shopkeeper. Availability is at the DM's discretion.</div>
           <div id="vaultGrid"></div>
         </div>
       </div>
@@ -365,9 +369,8 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
       <div class="page" id="pgSell">
         <div class="sellPageWrap">
 
-          <!-- VALUABLE ITEMS SELL -->
           <div class="sellSection">
-            <div class="sellSectionTitle">💎 Sell Valuable Items <span style="font-size:.7rem;color:var(--gd2);font-weight:normal">(magic items, gems, paintings, mounts, trade goods — 50% value)</span></div>
+            <div class="sellSectionTitle">💎 Sell Valuable Items <small>(magic items, gems, paintings, mounts, trade goods — 50% value)</small></div>
             <div class="sellManualRow">
               <input type="text" id="vSellName" placeholder="Item name (lookup or enter manually)…" oninput="liveItemLookup('vSellName','vSellPrice','vSellDrop')" autocomplete="off">
               <div style="position:relative;flex:0 0 auto">
@@ -381,9 +384,8 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
             <div class="btnRow"><button class="btn btnGr" onclick="confirmSellSection('valuable')">Sell Valuable Items</button></div>
           </div>
 
-          <!-- JUNK ITEMS SELL -->
           <div class="sellSection">
-            <div class="sellSectionTitle">🗑️ Sell Junk / Common Items <span style="font-size:.7rem;color:var(--gd2);font-weight:normal">(weapons, armor, tools, common gear — 10% value)</span></div>
+            <div class="sellSectionTitle">🗑️ Sell Junk / Common Items <small>(weapons, armor, tools, common gear — 10% value)</small></div>
             <div class="sellManualRow">
               <input type="text" id="jSellName" placeholder="Item name (lookup or enter manually)…" oninput="liveItemLookup('jSellName','jSellPrice','jSellDrop')" autocomplete="off">
               <div style="position:relative;flex:0 0 auto">
@@ -397,9 +399,8 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
             <div class="btnRow"><button class="btn btnGr" onclick="confirmSellSection('junk')">Sell Junk Items</button></div>
           </div>
 
-          <!-- REPAIR -->
           <div class="sellSection">
-            <div class="sellSectionTitle">🔧 Repair Costs <span style="font-size:.7rem;color:var(--gd2);font-weight:normal">(20% of item value — no scrolls or potions)</span></div>
+            <div class="sellSectionTitle">🔧 Repair Costs <small>(20% of item value — no scrolls or potions)</small></div>
             <div id="repairList"><div class="noItemsMsg">No repairable items yet. Purchase items to see them here.</div></div>
             <div class="sellTotal">Total repairs: <span id="repairTotal">0 gp</span></div>
             <div class="btnRow"><button class="btn btnGold" onclick="payRepairs()">Pay Repair Costs</button></div>
@@ -417,7 +418,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
               <input type="text" id="wlName" placeholder="Search for an item to add…" oninput="wlLiveSearch()" autocomplete="off">
               <div class="wlDropdown" id="wlDrop"></div>
             </div>
-            <select id="wlStatus" style="background:var(--sl);border:1px solid var(--gd2);border-radius:4px;color:var(--txt);font-family:'EB Garamond',serif;font-size:.9rem;padding:.35rem .6rem;cursor:pointer;outline:none">
+            <select id="wlStatus" class="wlStatusSel">
               <option value="seeking">Seeking</option>
               <option value="found">Found!</option>
             </select>
@@ -426,40 +427,16 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
           <div id="wishItems"></div>
           <div class="cartTotal" id="wlTotal" style="margin-top:.8rem">Total wanted: <span>0 gp</span></div>
 
-          <!-- Magic Items by Level Table -->
           <div style="margin-top:1.5rem">
             <div style="font-family:'Cinzel Decorative',serif;font-size:.9rem;color:var(--gd);margin-bottom:.5rem">✦ Magic Items by Character Level</div>
             <table class="miLvlTable">
-              <thead>
-                <tr>
-                  <th>Rarity</th>
-                  <th>Levels 1–4</th>
-                  <th>Levels 5–10</th>
-                  <th>Levels 11–16</th>
-                  <th>Levels 17–20</th>
-                </tr>
-              </thead>
+              <thead><tr><th>Rarity</th><th>Levels 1–4</th><th>Levels 5–10</th><th>Levels 11–16</th><th>Levels 17–20</th></tr></thead>
               <tbody>
-                <tr>
-                  <td><span class="cBadge bCommon">Common</span></td>
-                  <td>6</td><td>10</td><td>3</td><td class="empty">—</td>
-                </tr>
-                <tr>
-                  <td><span class="cBadge bUncommon">Uncommon</span></td>
-                  <td>4</td><td>17</td><td>7</td><td class="empty">—</td>
-                </tr>
-                <tr>
-                  <td><span class="cBadge bRare">Rare</span></td>
-                  <td>1</td><td>6</td><td>11</td><td>5</td>
-                </tr>
-                <tr>
-                  <td><span class="cBadge bVeryRare">Very Rare</span></td>
-                  <td class="empty">—</td><td>1</td><td>7</td><td>11</td>
-                </tr>
-                <tr>
-                  <td><span class="cBadge bLegendary">Legendary</span></td>
-                  <td class="empty">—</td><td class="empty">—</td><td>2</td><td>9</td>
-                </tr>
+                <tr><td><span class="cBadge bCommon">Common</span></td><td>6</td><td>10</td><td>3</td><td class="empty">—</td></tr>
+                <tr><td><span class="cBadge bUncommon">Uncommon</span></td><td>4</td><td>17</td><td>7</td><td class="empty">—</td></tr>
+                <tr><td><span class="cBadge bRare">Rare</span></td><td>1</td><td>6</td><td>11</td><td>5</td></tr>
+                <tr><td><span class="cBadge bVeryRare">Very Rare</span></td><td class="empty">—</td><td>1</td><td>7</td><td>11</td></tr>
+                <tr><td><span class="cBadge bLegendary">Legendary</span></td><td class="empty">—</td><td class="empty">—</td><td>2</td><td>9</td></tr>
               </tbody>
             </table>
           </div>
@@ -484,7 +461,6 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
         </div>
       </div>
 
-      <!-- INVENTORY -->
       <div class="invBox">
         <div class="invTitle">
           🎒 Inventory
@@ -509,14 +485,8 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
         <tr><td>Failure</td><td>10% cost increase</td></tr>
       </tbody>
     </table>
-    <div class="modRow">
-      <label>Persuasion Modifier</label>
-      <input type="number" id="persuasionMod" value="0" min="-5" max="20">
-    </div>
-    <div class="modRow">
-      <label>DC (set by DM)</label>
-      <input type="number" id="barterDC" value="15" min="1" max="30">
-    </div>
+    <div class="modRow"><label>Persuasion Modifier</label><input type="number" id="persuasionMod" value="0" min="-5" max="20"></div>
+    <div class="modRow"><label>DC (set by DM)</label><input type="number" id="barterDC" value="15" min="1" max="30"></div>
     <div class="d20Wrap">
       <button class="d20Btn" id="rollBtn" onclick="rollD20()">ROLL<br>D20</button>
       <div class="rollResult" id="rollResult">—</div>
@@ -559,228 +529,201 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:
 
 <script>
 // ── STATE ──────────────────────────────────────────────────────────────────────
-let D = null;
-let cart = {};
-let inventory = JSON.parse(localStorage.getItem('gg_inv')||'[]'); // [{item, qty, src}]
-let sellListV = []; // valuable sell queue
-let sellListJ = []; // junk sell queue
-let curDiscount = 0;
-let siCat = 'All';
-let scLv = 'All';
-let potRar = 'All';
-let miRar = 'All';
-let wishlist = JSON.parse(localStorage.getItem('gg_wish')||'[]');
-let spreeItems = [];
-let wlSelectedItem = null;
-
-const GP_RATES = {cp:.01, sp:.1, gp:1, pp:10};
+let D=null, cart={}, curDiscount=0;
+let siCat='All', scLv='All', potRar='All', miRar='All';
+let inventory=JSON.parse(localStorage.getItem('gg_inv')||'[]');
+let wishlist=JSON.parse(localStorage.getItem('gg_wish')||'[]');
+let sellListV=[], sellListJ=[], spreeItems=[], wlSelectedItem=null;
+let repairable=[];
 
 // ── INIT ───────────────────────────────────────────────────────────────────────
 fetch('shop_data.json')
   .then(r=>r.json())
   .then(d=>{
     D=d;
-    buildSICats();
-    buildLvBtns();
-    buildRarBtns();
-    buildMiRarBtns();
-    renderSimple();
-    renderWishlist();
-    renderInventory();
-    buildSellFromInventory();
+    buildSICats(); buildLvBtns(); buildRarBtns(); buildMiRarBtns();
+    renderSimple(); renderWishlist(); renderInventory(); buildSellFromInventory();
   })
   .catch(e=>{
     document.getElementById('siGrid').innerHTML=`<div class="loadMsg" style="color:#ff7070">⚠ Could not load shop_data.json — ensure it is in the same folder as index.html.<br><small>${e}</small></div>`;
   });
 
 // ── CURRENCY ──────────────────────────────────────────────────────────────────
-function updTotal(){
-  const gp = +document.getElementById('iCP').value*.01
-            + +document.getElementById('iSP').value*.1
-            + +document.getElementById('iGP').value
-            + +document.getElementById('iPP').value*10;
-  document.getElementById('totalGP').textContent = fmtGP(gp);
-}
 function totalGold(){
   return +document.getElementById('iCP').value*.01
        + +document.getElementById('iSP').value*.1
        + +document.getElementById('iGP').value
        + +document.getElementById('iPP').value*10;
 }
+function updTotal(){ document.getElementById('totalGP').textContent=fmtGP(totalGold()); }
+
 function spendGold(gp){
-  let rem = gp;
-  let pp = +document.getElementById('iPP').value;
-  let gpV = +document.getElementById('iGP').value;
-  let sp = +document.getElementById('iSP').value;
-  let cp = +document.getElementById('iCP').value;
-  if(gpV >= rem){ gpV -= rem; rem = 0; }
-  else { rem -= gpV; gpV = 0; }
-  if(rem > 0){
-    let ppNeeded = Math.ceil(rem/10);
-    if(pp >= ppNeeded){ pp -= ppNeeded; gpV += ppNeeded*10 - rem; rem = 0; }
-    else { rem -= pp*10; pp = 0; }
+  let rem=gp;
+  let pp=+document.getElementById('iPP').value;
+  let gpV=+document.getElementById('iGP').value;
+  let sp=+document.getElementById('iSP').value;
+  let cp=+document.getElementById('iCP').value;
+  if(gpV>=rem){ gpV-=rem; rem=0; }
+  else { rem-=gpV; gpV=0; }
+  if(rem>0){
+    const ppN=Math.ceil(rem/10);
+    if(pp>=ppN){ pp-=ppN; gpV+=ppN*10-rem; rem=0; }
+    else { rem-=pp*10; pp=0; }
   }
-  if(rem > 0){
-    let spNeeded = Math.ceil(rem/.1);
-    if(sp >= spNeeded){ sp -= spNeeded; gpV += spNeeded*.1 - rem; rem = 0; }
-    else { rem -= sp*.1; sp = 0; }
+  if(rem>0){
+    const spN=Math.ceil(rem/.1);
+    if(sp>=spN){ sp-=spN; gpV+=spN*.1-rem; rem=0; }
+    else { rem-=sp*.1; sp=0; }
   }
-  if(rem > 0){
-    let cpNeeded = Math.ceil(rem/.01);
-    if(cp >= cpNeeded){ cp -= cpNeeded; rem = 0; }
-    else { rem -= cp*.01; cp = 0; }
+  if(rem>0){
+    const cpN=Math.ceil(rem/.01);
+    if(cp>=cpN){ cp-=cpN; rem=0; }
+    else { cp=0; }
   }
-  document.getElementById('iPP').value = Math.round(pp*100)/100;
-  document.getElementById('iGP').value = Math.round(gpV*100)/100;
-  document.getElementById('iSP').value = Math.round(sp*100)/100;
-  document.getElementById('iCP').value = Math.round(cp*100)/100;
+  const r=v=>Math.round(v*100)/100;
+  document.getElementById('iPP').value=r(pp);
+  document.getElementById('iGP').value=r(gpV);
+  document.getElementById('iSP').value=r(sp);
+  document.getElementById('iCP').value=r(cp);
   updTotal();
 }
 function gainGold(gp){
-  document.getElementById('iGP').value = (parseFloat(document.getElementById('iGP').value)||0) + Math.round(gp*100)/100;
+  const el=document.getElementById('iGP');
+  el.value=(parseFloat(el.value)||0)+Math.round(gp*100)/100;
   updTotal();
 }
 
 // ── FORMAT ────────────────────────────────────────────────────────────────────
 function fmtGP(v){
-  if(v===undefined||v===null||isNaN(v)) return '?';
-  if(typeof v === 'string') return v;
+  if(v==null||isNaN(v)) return '?';
+  if(typeof v==='string') return v;
   if(v>=1000) return (v/1000).toFixed(1).replace(/\.0$/,'')+'k gp';
   if(v<.01) return (v*100).toFixed(1)+' cp';
   if(v<1) return (v*10).toFixed(1)+' sp';
-  return v%1===0 ? v+' gp' : v.toFixed(2)+' gp';
+  return v%1===0?v+' gp':v.toFixed(2)+' gp';
 }
 function parsePrice(p){
   if(typeof p==='number') return p;
-  if(typeof p==='string'){
-    const n = parseFloat(p.replace(/[^\d.]/g,''));
-    if(isNaN(n)) return 0;
-    return n;
-  }
+  if(typeof p==='string'){ const n=parseFloat(p.replace(/[^\d.]/g,'')); return isNaN(n)?0:n; }
   return 0;
 }
+function esc(item){ return JSON.stringify(item).replace(/"/g,'&quot;'); }
 
 // ── TABS ──────────────────────────────────────────────────────────────────────
-const PAGES = {simple:'pgSimple',scrolls:'pgScrolls',potions:'pgPotions',magic:'pgMagic',sell:'pgSell',wishlist:'pgWishlist'};
+const PAGES={simple:'pgSimple',scrolls:'pgScrolls',potions:'pgPotions',magic:'pgMagic',sell:'pgSell',wishlist:'pgWishlist'};
 function showTab(k){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('act'));
-  document.querySelectorAll('.mTab').forEach(b=>b.classList.remove('act'));
+  document.querySelectorAll('.mTab').forEach(b=>b.classList.toggle('act', b.dataset.tab===k));
   document.getElementById(PAGES[k]).classList.add('act');
-  document.querySelectorAll('.mTab').forEach(b=>{ if(b.getAttribute('onclick')===`showTab('${k}')`) b.classList.add('act'); });
   if(k==='sell') buildSellFromInventory();
   if(k==='scrolls') renderScrolls();
   if(k==='potions') renderPotions();
   if(k==='magic') renderMagic();
 }
-function showMagicPage(k, btn){
+function showMagicPage(k,btn){
   document.querySelectorAll('.magicPage').forEach(p=>p.classList.remove('act'));
   document.querySelectorAll('.mNavBtn').forEach(b=>b.classList.remove('act'));
-  document.getElementById('mp'+k.charAt(0).toUpperCase()+k.slice(1)).classList.add('act');
+  document.getElementById('mp'+k[0].toUpperCase()+k.slice(1)).classList.add('act');
   btn.classList.add('act');
   if(k==='services') renderServices();
   if(k==='vault') renderVault();
   if(k==='items') renderMagic();
 }
 
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+const RAR_ORDER={Common:0,Uncommon:1,Rare:2,'Very Rare':3,Legendary:4};
+const RAR_CLASS={Common:'bCommon',Uncommon:'bUncommon',Rare:'bRare','Very Rare':'bVeryRare',Legendary:'bLegendary'};
+function rarClass(r){ return RAR_CLASS[r]||'bCommon'; }
+function sortItems(items,sort){
+  if(sort==='az') items.sort((a,b)=>a.n.localeCompare(b.n));
+  else if(sort==='za') items.sort((a,b)=>b.n.localeCompare(a.n));
+  else if(sort==='lo') items.sort((a,b)=>parsePrice(a.p)-parsePrice(b.p));
+  else items.sort((a,b)=>parsePrice(b.p)-parsePrice(a.p));
+}
+function setFilterBtn(container,btn){
+  document.querySelectorAll(`${container} .fBtn`).forEach(b=>b.classList.remove('act'));
+  btn.classList.add('act');
+}
+
 // ── CART ──────────────────────────────────────────────────────────────────────
-function cartKey(item, src){ return src+'::'+item.n; }
-function addToCart(item, src){
-  const k = cartKey(item, src);
+function cartKey(item,src){ return src+'::'+item.n; }
+function addToCart(item,src){
+  const k=cartKey(item,src);
   if(cart[k]) cart[k].qty++;
-  else cart[k] = {item, qty:1, src};
-  curDiscount = 0;
-  renderCart();
-  markRows();
+  else cart[k]={item,qty:1,src};
+  curDiscount=0; renderCart(); markRows();
 }
-function rmFromCart(k, delta=1){
+function addToCartByKey(k){ if(cart[k]) addToCart(cart[k].item,cart[k].src); }
+function rmFromCart(k,delta=1){
   if(!cart[k]) return;
-  cart[k].qty -= delta;
-  if(cart[k].qty <= 0) delete cart[k];
-  curDiscount = 0;
-  renderCart();
-  markRows();
+  cart[k].qty-=delta;
+  if(cart[k].qty<=0) delete cart[k];
+  curDiscount=0; renderCart(); markRows();
 }
-function clearCart(){
-  cart = {};
-  curDiscount = 0;
-  renderCart();
-  markRows();
-}
-function cartSum(){ return Object.values(cart).reduce((s,c)=>s+parsePrice(c.item.p)*c.qty, 0); }
-function cartSumDiscounted(){ return cartSum() * (1 - curDiscount); }
+function clearCart(){ cart={}; curDiscount=0; renderCart(); markRows(); }
+function cartSum(){ return Object.values(cart).reduce((s,c)=>s+parsePrice(c.item.p)*c.qty,0); }
+function cartSumDiscounted(){ return cartSum()*(1-curDiscount); }
 function renderCart(){
-  const el = document.getElementById('cartItems');
-  const keys = Object.keys(cart);
-  if(!keys.length){ el.innerHTML='<div class="emptyMsg" style="padding:.8rem">Cart is empty</div>'; }
-  else {
-    el.innerHTML = keys.map(k=>{
-      const c = cart[k];
-      const p = parsePrice(c.item.p);
-      return `<div class="cartItem">
-        <span class="ciName">${c.item.n}</span>
-        <div class="ciQtyBtns">
-          <button onclick="rmFromCart('${k}')">−</button>
-          <span class="ciQty">${c.qty}</span>
-          <button onclick="addToCartByKey('${k}')">+</button>
-        </div>
-        <span class="ciPrice">${fmtGP(p*c.qty)}</span>
-      </div>`;
-    }).join('');
-  }
-  const sum = cartSumDiscounted();
-  document.getElementById('cartTotal').textContent = fmtGP(sum);
-  document.getElementById('cartDiscount').textContent = curDiscount>0 ? `✓ ${Math.round(Math.abs(curDiscount)*100)}% barter discount applied` : (curDiscount<0?`⚠ ${Math.round(Math.abs(curDiscount)*100)}% price increase`:'');
-  document.getElementById('cartDiscount').style.color = curDiscount>0?'#5fd87a':curDiscount<0?'#ff7070':'';
-}
-function addToCartByKey(k){
-  if(cart[k]) addToCart(cart[k].item, cart[k].src);
+  const el=document.getElementById('cartItems');
+  const keys=Object.keys(cart);
+  el.innerHTML=keys.length
+    ? keys.map(k=>{
+        const c=cart[k], p=parsePrice(c.item.p);
+        return `<div class="cartItem">
+          <span class="ciName">${c.item.n}</span>
+          <div class="ciQtyBtns">
+            <button onclick="rmFromCart('${k}')">−</button>
+            <span class="ciQty">${c.qty}</span>
+            <button onclick="addToCartByKey('${k}')">+</button>
+          </div>
+          <span class="ciPrice">${fmtGP(p*c.qty)}</span>
+        </div>`;
+      }).join('')
+    : '<div class="emptyMsg" style="padding:.8rem">Cart is empty</div>';
+  const sum=cartSumDiscounted();
+  document.getElementById('cartTotal').textContent=fmtGP(sum);
+  const disc=document.getElementById('cartDiscount');
+  if(curDiscount>0){ disc.textContent=`✓ ${Math.round(curDiscount*100)}% barter discount applied`; disc.style.color='#5fd87a'; }
+  else if(curDiscount<0){ disc.textContent=`⚠ ${Math.round(Math.abs(curDiscount)*100)}% price increase`; disc.style.color='#ff7070'; }
+  else { disc.textContent=''; disc.style.color=''; }
 }
 function markRows(){
   document.querySelectorAll('.row-item').forEach(el=>{
-    const k = el.dataset.key;
-    if(cart[k]){
-      el.classList.add('inCart');
-      const qEl = el.querySelector('.riQty');
-      if(qEl) qEl.textContent = cart[k].qty;
-      else {
-        const q = document.createElement('span');
-        q.className='riQty';
-        q.textContent = cart[k].qty;
-        el.querySelector('.riActions').prepend(q);
-      }
-    } else {
-      el.classList.remove('inCart');
-      const qEl = el.querySelector('.riQty');
-      if(qEl) qEl.remove();
-    }
+    const k=el.dataset.key, inC=cart[k];
+    el.classList.toggle('inCart',!!inC);
+    let qEl=el.querySelector('.riQty');
+    if(inC){
+      if(qEl) qEl.textContent=inC.qty;
+      else { qEl=document.createElement('span'); qEl.className='riQty'; qEl.textContent=inC.qty; el.querySelector('.riActions').prepend(qEl); }
+    } else if(qEl) qEl.remove();
   });
 }
 
 // ── PURCHASE & INVENTORY ──────────────────────────────────────────────────────
 function purchase(){
-  const total = cartSumDiscounted();
+  const total=cartSumDiscounted();
   if(!Object.keys(cart).length){ alert('Cart is empty!'); return; }
-  if(totalGold() < total){ alert(`Not enough gold! Need ${fmtGP(total)}, have ${fmtGP(totalGold())}.`); return; }
-  // Add to inventory
+  if(totalGold()<total){ alert(`Not enough gold! Need ${fmtGP(total)}, have ${fmtGP(totalGold())}.`); return; }
   Object.values(cart).forEach(c=>{
-    const existing = inventory.find(i=>i.item.n===c.item.n && i.src===c.src);
-    if(existing) existing.qty += c.qty;
-    else inventory.push({item:{...c.item}, qty:c.qty, src:c.src});
+    const ex=inventory.find(i=>i.item.n===c.item.n&&i.src===c.src);
+    if(ex) ex.qty+=c.qty;
+    else inventory.push({item:{...c.item},qty:c.qty,src:c.src});
   });
-  saveInventory();
-  spendGold(total);
-  clearCart();
-  renderInventory();
-  buildSellFromInventory();
+  saveInventory(); spendGold(total); clearCart();
+  renderInventory(); buildSellFromInventory();
   alert(`Purchase complete! Spent ${fmtGP(total)}.`);
 }
-function saveInventory(){ localStorage.setItem('gg_inv', JSON.stringify(inventory)); }
+function saveInventory(){ localStorage.setItem('gg_inv',JSON.stringify(inventory)); }
 function renderInventory(){
-  const el = document.getElementById('inventoryItems');
-  if(!inventory.length){ el.innerHTML='<div class="emptyMsg" style="padding:.5rem;font-size:.8rem">Nothing purchased yet</div>'; document.getElementById('invCount').textContent='0 items'; return; }
-  const total = inventory.reduce((s,i)=>s+i.qty,0);
-  document.getElementById('invCount').textContent = total+' item'+(total!==1?'s':'');
-  el.innerHTML = inventory.map((inv,idx)=>`<div class="invItem">
+  const el=document.getElementById('inventoryItems');
+  if(!inventory.length){
+    el.innerHTML='<div class="emptyMsg" style="padding:.5rem;font-size:.8rem">Nothing purchased yet</div>';
+    document.getElementById('invCount').textContent='0 items';
+    return;
+  }
+  const total=inventory.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('invCount').textContent=total+' item'+(total!==1?'s':'');
+  el.innerHTML=inventory.map((inv,idx)=>`<div class="invItem">
     <span class="invName" style="font-size:.82rem">${inv.item.n}</span>
     <span class="invQty">×${inv.qty}</span>
     <button class="invRemBtn" onclick="removeFromInventory(${idx})" title="Remove one">−</button>
@@ -789,124 +732,98 @@ function renderInventory(){
 function removeFromInventory(idx){
   inventory[idx].qty--;
   if(inventory[idx].qty<=0) inventory.splice(idx,1);
-  saveInventory();
-  renderInventory();
-  buildSellFromInventory();
+  saveInventory(); renderInventory(); buildSellFromInventory();
 }
 
 // ── BARTER ────────────────────────────────────────────────────────────────────
-let lastRoll = null;
 function openBarter(){
   if(!Object.keys(cart).length){ alert('Cart is empty!'); return; }
   document.getElementById('rollResult').textContent='—';
   document.getElementById('rollLabel').textContent='Click the die to roll';
   document.getElementById('barterResult').style.display='none';
   document.getElementById('applyDiscBtn').style.display='none';
-  lastRoll = null;
   document.getElementById('barterModal').classList.add('open');
 }
 function rollD20(){
-  const btn = document.getElementById('rollBtn');
+  const btn=document.getElementById('rollBtn');
   btn.classList.add('rolling');
   setTimeout(()=>{
     btn.classList.remove('rolling');
-    const roll = Math.floor(Math.random()*20)+1;
-    const mod = parseInt(document.getElementById('persuasionMod').value)||0;
-    const dc = parseInt(document.getElementById('barterDC').value)||15;
-    const total = roll + mod;
-    lastRoll = {roll, total, dc};
-    document.getElementById('rollResult').textContent = `${total}`;
-    let label = `D20: ${roll}`;
-    if(mod!==0) label += ` + Mod: ${mod>=0?'+':''}${mod} = ${total}`;
-    label += ` (DC ${dc})`;
-    document.getElementById('rollLabel').textContent = label;
-    let disc = 0, msg = '', cls='';
-    if(roll===20){
-      disc=0.15; msg=`<strong>NATURAL 20!</strong> The shopkeeper is impressed. <strong>15% discount</strong>!`; cls='discountGood';
-    } else if(total>=dc){
-      disc=0.10; msg=`Success! You meet the DC ${dc}. <strong>10% discount</strong> granted.`; cls='discountGood';
-    } else {
-      disc=-0.10; msg=`Failed to meet DC ${dc}. The shopkeeper bristles. <strong>10% cost increase.</strong>`; cls='discountBad';
-    }
-    const res = document.getElementById('barterResult');
+    const roll=Math.floor(Math.random()*20)+1;
+    const mod=parseInt(document.getElementById('persuasionMod').value)||0;
+    const dc=parseInt(document.getElementById('barterDC').value)||15;
+    const tot=roll+mod;
+    document.getElementById('rollResult').textContent=tot;
+    let label=`D20: ${roll}`;
+    if(mod) label+=` + Mod: ${mod>=0?'+':''}${mod} = ${tot}`;
+    label+=` (DC ${dc})`;
+    document.getElementById('rollLabel').textContent=label;
+    let disc=0, msg='', cls='';
+    if(roll===20){ disc=0.15; msg=`<strong>NATURAL 20!</strong> The shopkeeper is impressed. <strong>15% discount</strong>!`; cls='discountGood'; }
+    else if(tot>=dc){ disc=0.10; msg=`Success! You meet the DC ${dc}. <strong>10% discount</strong> granted.`; cls='discountGood'; }
+    else { disc=-0.10; msg=`Failed to meet DC ${dc}. The shopkeeper bristles. <strong>10% cost increase.</strong>`; cls='discountBad'; }
+    const res=document.getElementById('barterResult');
     res.style.display='block';
     res.innerHTML=`<span class="${cls}">${msg}</span>`;
-    curDiscount = disc;
+    curDiscount=disc;
     document.getElementById('applyDiscBtn').style.display='block';
-  }, 650);
+  },650);
 }
 function applyDiscount(){ renderCart(); closeModal('barterModal'); }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 
 // ── SELL SYSTEM ───────────────────────────────────────────────────────────────
-// Determine if item is valuable or junk
-function isValuable(item, src){
-  // magic items, potions, scrolls are valuable
-  if(['mi','pot','sc','svc'].includes(src)) return true;
-  // vault items valuable
-  if(src==='vault') return true;
-  return false;
-}
+function isValuable(src){ return ['mi','pot','sc','svc','vault'].includes(src); }
 
 function buildSellFromInventory(){
-  // Auto-populate sell lists from inventory
-  sellListV = [];
-  sellListJ = [];
+  sellListV=[]; sellListJ=[];
   inventory.forEach(inv=>{
     for(let i=0;i<inv.qty;i++){
-      const entry = {item:{...inv.item}, src:inv.src, manual:false};
-      if(isValuable(inv.item, inv.src)) sellListV.push(entry);
-      else sellListJ.push(entry);
+      const entry={item:{...inv.item},src:inv.src,manual:false};
+      (isValuable(inv.src)?sellListV:sellListJ).push(entry);
     }
   });
-  renderSellLists();
-  renderRepairList();
+  renderSellLists(); renderRepairList();
 }
 
 function addSellItem(type){
-  const nameId = type==='valuable'?'vSellName':'jSellName';
-  const priceId = type==='valuable'?'vSellPrice':'jSellPrice';
-  const name = document.getElementById(nameId).value.trim();
+  const isV=type==='valuable';
+  const nameEl=document.getElementById(isV?'vSellName':'jSellName');
+  const priceEl=document.getElementById(isV?'vSellPrice':'jSellPrice');
+  const name=nameEl.value.trim();
   if(!name){ alert('Enter an item name.'); return; }
-  const price = parseFloat(document.getElementById(priceId).value)||0;
-  const entry = {item:{n:name, p:price}, src:'manual', manual:true};
-  if(type==='valuable') sellListV.push(entry);
-  else sellListJ.push(entry);
-  document.getElementById(nameId).value='';
-  document.getElementById(priceId).value='';
-  document.getElementById(type==='valuable'?'vSellDrop':'jSellDrop').classList.remove('open');
+  const price=parseFloat(priceEl.value)||0;
+  (isV?sellListV:sellListJ).push({item:{n:name,p:price},src:'manual',manual:true});
+  nameEl.value=''; priceEl.value='';
+  document.getElementById(isV?'vSellDrop':'jSellDrop').classList.remove('open');
   renderSellLists();
 }
 
 function renderSellLists(){
-  renderOneSellList('v', sellListV, 0.5, 'vSellList', 'vSellTotal', 'V');
-  renderOneSellList('j', sellListJ, 0.1, 'jSellList', 'jSellTotal', 'J');
+  renderOneSellList('v',sellListV,0.5,'vSellList','vSellTotal','V');
+  renderOneSellList('j',sellListJ,0.1,'jSellList','jSellTotal','J');
 }
 
-function renderOneSellList(prefix, list, rate, listId, totalId, label){
-  const el = document.getElementById(listId);
-  if(!list.length){ el.innerHTML=`<div class="noItemsMsg">No items yet. Add manually or purchase items.</div>`; document.getElementById(totalId).textContent='0 gp'; return; }
-  let total=0;
-  el.innerHTML = list.map((entry,i)=>{
-    const p = parsePrice(entry.item.p);
-    const amt = p*rate;
-    total+=amt;
-    const labelCls = label==='V'?'labelV':'labelJ';
+function renderOneSellList(prefix,list,rate,listId,totalId,label){
+  const el=document.getElementById(listId);
+  if(!list.length){ el.innerHTML='<div class="noItemsMsg">No items yet. Add manually or purchase items.</div>'; document.getElementById(totalId).textContent='0 gp'; return; }
+  const labelCls=label==='V'?'labelV':'labelJ';
+  el.innerHTML=list.map((entry,i)=>{
+    const p=parsePrice(entry.item.p), amt=p*rate;
     return `<div class="sellItemRow">
       <input type="checkbox" class="sellCk" data-type="${prefix}" data-i="${i}" checked style="accent-color:var(--gd);flex-shrink:0">
-      <span class="sellItemRow siName" style="flex:1;color:var(--txt)">${entry.item.n}</span>
+      <span class="siName" style="flex:1;color:var(--txt)">${entry.item.n}</span>
       <span class="siLabel ${labelCls}">${label}</span>
       <span class="siPct">${Math.round(rate*100)}%</span>
       <span class="siAmt">${fmtGP(amt)}</span>
       <button class="siRemove" onclick="removeSellEntry('${prefix}',${i})" title="Remove">✕</button>
     </div>`;
   }).join('');
-  // recalculate based on checked
-  updOneSellTotal(prefix, list, rate, totalId);
+  updOneSellTotal(prefix,list,rate,totalId);
   document.querySelectorAll(`.sellCk[data-type="${prefix}"]`).forEach(ck=>ck.onchange=()=>updOneSellTotal(prefix,list,rate,totalId));
 }
 
-function updOneSellTotal(prefix, list, rate, totalId){
+function updOneSellTotal(prefix,list,rate,totalId){
   let t=0;
   document.querySelectorAll(`.sellCk[data-type="${prefix}"]:checked`).forEach(ck=>{
     const i=parseInt(ck.dataset.i);
@@ -915,108 +832,90 @@ function updOneSellTotal(prefix, list, rate, totalId){
   document.getElementById(totalId).textContent=fmtGP(t);
 }
 
-function removeSellEntry(prefix, idx){
-  if(prefix==='v') sellListV.splice(idx,1);
-  else sellListJ.splice(idx,1);
+function removeSellEntry(prefix,idx){
+  (prefix==='v'?sellListV:sellListJ).splice(idx,1);
   renderSellLists();
 }
 
 function confirmSellSection(type){
-  const prefix = type==='valuable'?'v':'j';
-  const list = type==='valuable'?sellListV:sellListJ;
-  const rate = type==='valuable'?0.5:0.1;
-  const totalId = type==='valuable'?'vSellTotal':'jSellTotal';
-  let t=0; let toRemove=[];
+  const isV=type==='valuable';
+  const prefix=isV?'v':'j';
+  const list=isV?sellListV:sellListJ;
+  const rate=isV?0.5:0.1;
+  const totalId=isV?'vSellTotal':'jSellTotal';
+  let t=0, toRemove=[];
   document.querySelectorAll(`.sellCk[data-type="${prefix}"]:checked`).forEach(ck=>{
     const i=parseInt(ck.dataset.i);
     if(list[i]){ t+=parsePrice(list[i].item.p)*rate; toRemove.push(i); }
   });
   if(!toRemove.length){ alert('No items selected.'); return; }
   gainGold(t);
-  // remove from inventory if not manual
   toRemove.sort((a,b)=>b-a).forEach(i=>{
-    const entry = list[i];
-    if(!entry.manual){
-      const invIdx = inventory.findIndex(inv=>inv.item.n===entry.item.n);
-      if(invIdx>=0){
-        inventory[invIdx].qty--;
-        if(inventory[invIdx].qty<=0) inventory.splice(invIdx,1);
-      }
+    if(!list[i].manual){
+      const invIdx=inventory.findIndex(inv=>inv.item.n===list[i].item.n);
+      if(invIdx>=0){ inventory[invIdx].qty--; if(inventory[invIdx].qty<=0) inventory.splice(invIdx,1); }
     }
   });
-  saveInventory();
-  renderInventory();
-  if(type==='valuable') sellListV = sellListV.filter((_,i)=>!toRemove.includes(i));
-  else sellListJ = sellListJ.filter((_,i)=>!toRemove.includes(i));
+  saveInventory(); renderInventory();
+  if(isV) sellListV=sellListV.filter((_,i)=>!toRemove.includes(i));
+  else sellListJ=sellListJ.filter((_,i)=>!toRemove.includes(i));
   renderSellLists();
   alert(`Sold! Received ${fmtGP(t)}.`);
 }
 
 function renderRepairList(){
-  const el = document.getElementById('repairList');
-  // Exclude scrolls and potions from repair
-  const repairable = inventory.filter(inv=>!['sc','pot'].includes(inv.src));
+  const el=document.getElementById('repairList');
+  repairable=inventory.filter(inv=>!['sc','pot'].includes(inv.src));
   if(!repairable.length){ el.innerHTML='<div class="noItemsMsg">No repairable items in inventory.</div>'; document.getElementById('repairTotal').textContent='0 gp'; return; }
-  let total=0;
-  el.innerHTML = repairable.map((inv,i)=>{
-    const rv = parsePrice(inv.item.p)*.2;
-    total += rv * inv.qty;
+  el.innerHTML=repairable.map((inv,i)=>{
+    const rv=parsePrice(inv.item.p)*.2;
     return `<div class="repairRow">
       <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;flex:1">
-        <input type="checkbox" class="repairCk" data-i="${i}" onchange="updRepairTotal(repairable)" style="accent-color:var(--gd)">
-        <span class="rName">${inv.item.n} ${inv.qty>1?`<span style="color:var(--gd2);font-size:.75rem">×${inv.qty}</span>`:''}</span>
+        <input type="checkbox" class="repairCk" data-i="${i}" style="accent-color:var(--gd)">
+        <span class="rName">${inv.item.n}${inv.qty>1?` <span style="color:var(--gd2);font-size:.75rem">×${inv.qty}</span>`:''}</span>
       </label>
       <span class="rCost">${fmtGP(rv)} ea</span>
     </div>`;
   }).join('');
   document.getElementById('repairTotal').textContent='0 gp';
-  // store repairable for later use
-  window._repairable = repairable;
-  document.querySelectorAll('.repairCk').forEach(ck=>ck.onchange=()=>updRepairTotalFromDOM());
+  document.querySelectorAll('.repairCk').forEach(ck=>ck.onchange=updRepairTotal);
 }
-function updRepairTotalFromDOM(){
+function updRepairTotal(){
   let t=0;
-  document.querySelectorAll('.repairCk:checked').forEach(ck=>{
-    const i=parseInt(ck.dataset.i);
-    if(window._repairable&&window._repairable[i]) t+=parsePrice(window._repairable[i].item.p)*.2;
-  });
+  document.querySelectorAll('.repairCk:checked').forEach(ck=>{ const inv=repairable[parseInt(ck.dataset.i)]; if(inv) t+=parsePrice(inv.item.p)*.2; });
   document.getElementById('repairTotal').textContent=fmtGP(t);
 }
 function payRepairs(){
   let t=0;
-  document.querySelectorAll('.repairCk:checked').forEach(ck=>{
-    const i=parseInt(ck.dataset.i);
-    if(window._repairable&&window._repairable[i]) t+=parsePrice(window._repairable[i].item.p)*.2;
-  });
+  document.querySelectorAll('.repairCk:checked').forEach(ck=>{ const inv=repairable[parseInt(ck.dataset.i)]; if(inv) t+=parsePrice(inv.item.p)*.2; });
   if(!t){ alert('Select items to repair.'); return; }
   if(totalGold()<t){ alert(`Not enough gold! Need ${fmtGP(t)}.`); return; }
-  spendGold(t);
-  renderRepairList();
+  spendGold(t); renderRepairList();
   alert(`Repairs paid: ${fmtGP(t)}.`);
 }
 
-// ── LIVE ITEM LOOKUP (for sell inputs) ────────────────────────────────────────
-function liveItemLookup(nameInputId, priceInputId, dropId){
-  const q = document.getElementById(nameInputId).value.toLowerCase().trim();
-  const drop = document.getElementById(dropId);
+// ── LIVE ITEM LOOKUP ──────────────────────────────────────────────────────────
+function liveItemLookup(nameId,priceId,dropId){
+  const q=document.getElementById(nameId).value.toLowerCase().trim();
+  const drop=document.getElementById(dropId);
   if(!q||!D){ drop.classList.remove('open'); return; }
-  const results = getAllItems().filter(i=>i.n.toLowerCase().includes(q)).slice(0,10);
+  const results=getAllItems().filter(i=>i.n.toLowerCase().includes(q)).slice(0,10);
   if(!results.length){ drop.classList.remove('open'); return; }
-  drop.innerHTML = results.map(item=>`<div class="wlOption" onclick="pickSellItem('${nameInputId}','${priceInputId}','${dropId}',${JSON.stringify(item).replace(/'/g,'&#39;').replace(/"/g,'&quot;')})">
+  drop.innerHTML=results.map(item=>`<div class="wlOption" onclick="pickSellItem('${nameId}','${priceId}','${dropId}',${esc(item)})">
     <span>${item.n}</span><span class="wloPrice">${fmtGP(parsePrice(item.p))}</span>
   </div>`).join('');
   drop.classList.add('open');
 }
-function pickSellItem(nameId, priceId, dropId, item){
-  document.getElementById(nameId).value = item.n;
-  document.getElementById(priceId).value = parsePrice(item.p);
+function pickSellItem(nameId,priceId,dropId,item){
+  document.getElementById(nameId).value=item.n;
+  document.getElementById(priceId).value=parsePrice(item.p);
   document.getElementById(dropId).classList.remove('open');
 }
 
-// ── ALL ITEMS FLAT LIST (for lookup) ──────────────────────────────────────────
+// ── ALL ITEMS FLAT LIST ───────────────────────────────────────────────────────
 function getAllItems(){
   if(!D) return [];
-  const all = [];
+  const all=[];
   Object.entries(D.si||{}).forEach(([cat,arr])=>arr.forEach(i=>all.push({...i,_src:'si',_cat:cat})));
   (D.spells||[]).forEach(i=>all.push({...i,_src:'sc'}));
   (D.potions||[]).forEach(i=>all.push({...i,_src:'pot'}));
@@ -1027,95 +926,74 @@ function getAllItems(){
 
 // ── WISH LIST ─────────────────────────────────────────────────────────────────
 function wlLiveSearch(){
-  const q = document.getElementById('wlName').value.toLowerCase().trim();
-  const drop = document.getElementById('wlDrop');
-  wlSelectedItem = null;
+  const q=document.getElementById('wlName').value.toLowerCase().trim();
+  const drop=document.getElementById('wlDrop');
+  wlSelectedItem=null;
   if(!q||!D){ drop.classList.remove('open'); return; }
-  const results = getAllItems().filter(i=>i.n.toLowerCase().includes(q)).slice(0,12);
+  const results=getAllItems().filter(i=>i.n.toLowerCase().includes(q)).slice(0,12);
   if(!results.length){ drop.classList.remove('open'); return; }
-  drop.innerHTML = results.map(item=>`<div class="wlOption" onclick="pickWlItem(${JSON.stringify(item).replace(/'/g,'&#39;').replace(/"/g,'&quot;')})">
+  drop.innerHTML=results.map(item=>`<div class="wlOption" onclick="pickWlItem(${esc(item)})">
     <span>${item.n}</span><span class="wloPrice">${fmtGP(parsePrice(item.p))}</span>
   </div>`).join('');
   drop.classList.add('open');
 }
-function pickWlItem(item){
-  document.getElementById('wlName').value = item.n;
-  document.getElementById('wlDrop').classList.remove('open');
-  wlSelectedItem = item;
-}
+function pickWlItem(item){ document.getElementById('wlName').value=item.n; document.getElementById('wlDrop').classList.remove('open'); wlSelectedItem=item; }
 function addWish(){
-  const n = document.getElementById('wlName').value.trim();
+  const n=document.getElementById('wlName').value.trim();
   if(!n) return;
-  let p = 0;
-  if(wlSelectedItem && wlSelectedItem.n===n) p = parsePrice(wlSelectedItem.p);
-  else {
-    // try to find in data
-    const found = getAllItems().find(i=>i.n.toLowerCase()===n.toLowerCase());
-    if(found) p = parsePrice(found.p);
-  }
-  wishlist.push({n, p, s: document.getElementById('wlStatus').value});
+  let p=0;
+  if(wlSelectedItem&&wlSelectedItem.n===n) p=parsePrice(wlSelectedItem.p);
+  else { const found=getAllItems().find(i=>i.n.toLowerCase()===n.toLowerCase()); if(found) p=parsePrice(found.p); }
+  wishlist.push({n,p,s:document.getElementById('wlStatus').value});
   document.getElementById('wlName').value='';
   document.getElementById('wlDrop').classList.remove('open');
-  wlSelectedItem = null;
+  wlSelectedItem=null;
   saveWish(); renderWishlist();
 }
 function removeWish(i){ wishlist.splice(i,1); saveWish(); renderWishlist(); }
-function toggleWish(i){ wishlist[i].s = wishlist[i].s==='seeking'?'found':'seeking'; saveWish(); renderWishlist(); }
-function saveWish(){ localStorage.setItem('gg_wish', JSON.stringify(wishlist)); }
+function toggleWish(i){ wishlist[i].s=wishlist[i].s==='seeking'?'found':'seeking'; saveWish(); renderWishlist(); }
+function saveWish(){ localStorage.setItem('gg_wish',JSON.stringify(wishlist)); }
 function renderWishlist(){
-  const el = document.getElementById('wishItems');
+  const el=document.getElementById('wishItems');
   if(!wishlist.length){ el.innerHTML='<div class="emptyMsg">No items on the wish list yet.</div>'; return; }
-  el.innerHTML = wishlist.map((w,i)=>`<div class="wlItem">
+  el.innerHTML=wishlist.map((w,i)=>`<div class="wlItem">
     <span class="wlN">${w.n}</span>
     <span class="wlStat ${w.s==='found'?'wlFound':'wlSeeking'}" onclick="toggleWish(${i})" title="Click to toggle">${w.s==='found'?'✓ Found':'⟳ Seeking'}</span>
     <span class="wlP">${w.p?fmtGP(w.p):''}</span>
     <button class="wlDel" onclick="removeWish(${i})">✕</button>
   </div>`).join('');
-  const total = wishlist.filter(w=>w.s==='seeking').reduce((s,w)=>s+w.p,0);
-  document.getElementById('wlTotal').querySelector('span').textContent = fmtGP(total)+' still needed';
+  const total=wishlist.filter(w=>w.s==='seeking').reduce((s,w)=>s+w.p,0);
+  document.getElementById('wlTotal').querySelector('span').textContent=fmtGP(total)+' still needed';
 }
 
 // ── SHOPPING SPREE ────────────────────────────────────────────────────────────
 function openShoppingSpree(){
   if(!D){ alert('Data not loaded yet.'); return; }
-  const budget = totalGold();
+  const budget=totalGold();
   if(budget<=0){ alert('You have no gold!'); return; }
   generateSpree(budget);
   document.getElementById('spreeModal').classList.add('open');
 }
 function generateSpree(budget){
   if(budget===undefined) budget=totalGold();
-  // Collect all simple items with a valid price
   let all=[];
   Object.entries(D.si||{}).forEach(([cat,arr])=>arr.forEach(i=>{
     const p=parsePrice(i.p);
     if(p>0&&p<=budget) all.push({...i,_cat:cat,_src:'si',_p:p});
   }));
   if(!all.length){ spreeItems=[]; renderSpree(budget); return; }
-  // Shuffle for variety
+  // Shuffle
   for(let i=all.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [all[i],all[j]]=[all[j],all[i]]; }
-  // Greedy packing
-  let rem=budget, chosen=[];
-  // Sort by price desc for better packing
+  // Greedy pack (price desc)
   all.sort((a,b)=>b._p-a._p);
+  let rem=budget; const chosen=[];
   for(const item of all){
+    if(rem<0.01) break;
     if(item._p<=rem+0.001){
-      const existing=chosen.find(c=>c.n===item.n);
-      if(existing) existing._qty=(existing._qty||1)+1;
+      const ex=chosen.find(c=>c.n===item.n);
+      if(ex) ex._qty=(ex._qty||1)+1;
       else chosen.push({...item,_qty:1});
       rem-=item._p;
-      if(rem<0.01) break;
-    }
-  }
-  // Try to fill small remainder with cheaper items
-  const cheap=all.filter(i=>i._p<=rem+0.001).sort((a,b)=>b._p-a._p);
-  for(const item of cheap){
-    if(item._p<=rem+0.001){
-      const existing=chosen.find(c=>c.n===item.n);
-      if(existing) existing._qty=(existing._qty||1)+1;
-      else chosen.push({...item,_qty:1});
-      rem-=item._p;
-      if(rem<0.01) break;
     }
   }
   spreeItems=chosen;
@@ -1140,74 +1018,57 @@ function renderSpree(budget){
   </div>`).join('');
 }
 function confirmSpree(){
-  spreeItems.forEach(i=>{
-    for(let q=0;q<(i._qty||1);q++) addToCart(i,'si');
-  });
+  spreeItems.forEach(i=>{ for(let q=0;q<(i._qty||1);q++) addToCart(i,'si'); });
   closeModal('spreeModal');
 }
 
 // ── TOOLTIP ───────────────────────────────────────────────────────────────────
-const ttEl = document.getElementById('globalTooltip');
-function showTooltip(e, item){
-  document.getElementById('ttTitle').textContent = item.n;
+const ttEl=document.getElementById('globalTooltip');
+function showTooltip(e,item){
+  document.getElementById('ttTitle').textContent=item.n;
   let body='';
   if(item.d) body+=`<div style="margin-bottom:.3rem">${item.d}</div>`;
   if(item.p) body+=`<div style="color:var(--gl);font-weight:600">Price: ${fmtGP(parsePrice(item.p))}</div>`;
   if(item.r) body+=`<div style="color:var(--gd2);font-size:.8rem">Rarity: ${item.r}</div>`;
   if(item.t) body+=`<div style="color:var(--gd2);font-size:.8rem">Type: ${item.t}</div>`;
   if(item.a) body+=`<div style="color:#ff9090;font-size:.78rem">Requires Attunement</div>`;
-  document.getElementById('ttBody').innerHTML = body||'No description available.';
+  document.getElementById('ttBody').innerHTML=body||'No description available.';
   ttEl.classList.add('visible');
   posTooltip(e);
 }
 function posTooltip(e){
-  const x=e.clientX, y=e.clientY;
   const tw=ttEl.offsetWidth||300, th=ttEl.offsetHeight||100;
-  let lx=x+14, ly=y+14;
-  if(lx+tw>window.innerWidth-10) lx=x-tw-14;
-  if(ly+th>window.innerHeight-10) ly=y-th-14;
-  ttEl.style.left=lx+'px';
-  ttEl.style.top=ly+'px';
+  let lx=e.clientX+14, ly=e.clientY+14;
+  if(lx+tw>window.innerWidth-10) lx=e.clientX-tw-14;
+  if(ly+th>window.innerHeight-10) ly=e.clientY-th-14;
+  ttEl.style.left=lx+'px'; ttEl.style.top=ly+'px';
 }
 function hideTooltip(){ ttEl.classList.remove('visible'); }
-document.addEventListener('mousemove', e=>{ if(ttEl.classList.contains('visible')) posTooltip(e); });
+document.addEventListener('mousemove',e=>{ if(ttEl.classList.contains('visible')) posTooltip(e); });
 
 // ── ROW ITEM RENDERER ─────────────────────────────────────────────────────────
-function itemRow(item, src, extraBadges=''){
-  const k = cartKey(item, src);
-  const price = parsePrice(item.p);
-  const inC = cart[k];
+function itemRow(item,src,extraBadges=''){
+  const k=cartKey(item,src), inC=cart[k];
+  const price=parsePrice(item.p);
+  const ei=esc(item);
   return `<div class="row-item${inC?' inCart':''}" data-key="${k}">
-    <span class="riName" onmouseenter="showTooltip(event,${JSON.stringify(item).replace(/"/g,'&quot;')})" onmouseleave="hideTooltip()" onclick="showTooltip(event,${JSON.stringify(item).replace(/"/g,'&quot;')})">${item.n}</span>
+    <span class="riName" onmouseenter="showTooltip(event,${ei})" onmouseleave="hideTooltip()" onclick="showTooltip(event,${ei})">${item.n}</span>
     <div class="riBadges">${extraBadges}${item._cat?`<span class="cBadge bCommon">${item._cat}</span>`:''}</div>
     <span class="riPrice">${fmtGP(price)}</span>
     <div class="riActions">
       ${inC?`<span class="riQty">${inC.qty}</span>`:''}
       ${inC?`<button class="removeBtn" onclick="rmFromCart('${k}')" title="Remove one">−</button>`:''}
-      <button class="addBtn" onclick="addToCart(${JSON.stringify(item).replace(/"/g,'&quot;')},'${src}')" title="Add to cart">+</button>
+      <button class="addBtn" onclick="addToCart(${ei},'${src}')" title="Add to cart">+</button>
     </div>
   </div>`;
 }
 
-function rarClass(r){
-  const m={'Common':'bCommon','Uncommon':'bUncommon','Rare':'bRare','Very Rare':'bVeryRare','Legendary':'bLegendary'};
-  return m[r]||'bCommon';
-}
-function sortItems(items, sort){
-  if(sort==='az') items.sort((a,b)=>a.n.localeCompare(b.n));
-  else if(sort==='za') items.sort((a,b)=>b.n.localeCompare(a.n));
-  else if(sort==='lo') items.sort((a,b)=>parsePrice(a.p)-parsePrice(b.p));
-  else items.sort((a,b)=>parsePrice(b.p)-parsePrice(a.p));
-}
-const RAR_ORDER = {Common:0,Uncommon:1,Rare:2,'Very Rare':3,Legendary:4};
-
 // ── RENDER SIMPLE ITEMS ───────────────────────────────────────────────────────
 function buildSICats(){
   if(!D) return;
-  const cats = ['All', ...Object.keys(D.si)];
-  document.getElementById('siCatBtns').innerHTML = cats.map(c=>`<button class="fBtn${c==='All'?' act':''}" onclick="setSICat('${c}',this)">${c}</button>`).join('');
+  document.getElementById('siCatBtns').innerHTML=['All',...Object.keys(D.si)].map(c=>`<button class="fBtn${c==='All'?' act':''}" onclick="setSICat('${c}',this)">${c}</button>`).join('');
 }
-function setSICat(c,btn){ siCat=c; document.querySelectorAll('#siCatBtns .fBtn').forEach(b=>b.classList.remove('act')); btn.classList.add('act'); renderSimple(); }
+function setSICat(c,btn){ siCat=c; setFilterBtn('#siCatBtns',btn); renderSimple(); }
 function renderSimple(){
   if(!D) return;
   const q=(document.getElementById('search').value||'').toLowerCase();
@@ -1216,8 +1077,8 @@ function renderSimple(){
   if(siCat==='All') Object.entries(D.si).forEach(([cat,arr])=>arr.forEach(item=>items.push({...item,_cat:cat})));
   else (D.si[siCat]||[]).forEach(item=>items.push({...item,_cat:siCat}));
   if(q) items=items.filter(i=>i.n.toLowerCase().includes(q)||(i.d||'').toLowerCase().includes(q));
-  // Deduplicate by name
-  const seen=new Set(); items=items.filter(i=>{ if(seen.has(i.n)) return false; seen.add(i.n); return true; });
+  const seen=new Set();
+  items=items.filter(i=>{ if(seen.has(i.n)) return false; seen.add(i.n); return true; });
   sortItems(items,sort);
   document.getElementById('siCount').textContent=`${items.length} items`;
   document.getElementById('siGrid').innerHTML=items.map(item=>itemRow(item,'si')).join('')||'<div class="emptyMsg">No items found.</div>';
@@ -1229,7 +1090,7 @@ function buildLvBtns(){
   if(!D) return;
   document.getElementById('lvBtns').innerHTML=['All','0','1','2','3','4','5','6','7','8','9'].map(lv=>`<button class="fBtn${lv==='All'?' act':''}" onclick="setScLv('${lv}',this)">${lv==='All'?'All':'Lv '+lv}</button>`).join('');
 }
-function setScLv(lv,btn){ scLv=lv; document.querySelectorAll('#lvBtns .fBtn').forEach(b=>b.classList.remove('act')); btn.classList.add('act'); renderScrolls(); }
+function setScLv(lv,btn){ scLv=lv; setFilterBtn('#lvBtns',btn); renderScrolls(); }
 function renderScrolls(){
   if(!D) return;
   const q=(document.getElementById('scrollSearch').value||'').toLowerCase();
@@ -1241,11 +1102,7 @@ function renderScrolls(){
   else if(sort==='az') items.sort((a,b)=>a.n.localeCompare(b.n));
   else items.sort((a,b)=>a.p-b.p);
   document.getElementById('scCount').textContent=`${items.length} scrolls`;
-  document.getElementById('scGrid').innerHTML=items.map(item=>{
-    const lvBadge=`<span class="lvPill lv${item.lv}">${item.lv}</span>`;
-    const scBadge=item.sc?`<span class="cBadge bCommon">${item.sc}</span>`:'';
-    return itemRow(item,'sc',lvBadge+scBadge);
-  }).join('')||'<div class="emptyMsg">No scrolls found.</div>';
+  document.getElementById('scGrid').innerHTML=items.map(item=>itemRow(item,'sc',`<span class="lvPill lv${item.lv}">${item.lv}</span>${item.sc?`<span class="cBadge bCommon">${item.sc}</span>`:''}`)).join('')||'<div class="emptyMsg">No scrolls found.</div>';
   markRows();
 }
 
@@ -1255,7 +1112,7 @@ function buildRarBtns(){
   if(!D) return;
   document.getElementById('rarBtns').innerHTML=RARITIES.map(r=>`<button class="fBtn${r==='All'?' act':''}" onclick="setPotRar('${r}',this)">${r}</button>`).join('');
 }
-function setPotRar(r,btn){ potRar=r; document.querySelectorAll('#rarBtns .fBtn').forEach(b=>b.classList.remove('act')); btn.classList.add('act'); renderPotions(); }
+function setPotRar(r,btn){ potRar=r; setFilterBtn('#rarBtns',btn); renderPotions(); }
 function renderPotions(){
   if(!D) return;
   const q=(document.getElementById('potSearch').value||'').toLowerCase();
@@ -1269,9 +1126,9 @@ function renderPotions(){
 // ── RENDER MAGIC ITEMS ────────────────────────────────────────────────────────
 function buildMiRarBtns(){
   if(!D) return;
-  document.getElementById('miBtns').innerHTML=['All','Common','Uncommon','Rare','Very Rare','Legendary'].map(r=>`<button class="fBtn${r==='All'?' act':''}" onclick="setMiRar('${r}',this)">${r}</button>`).join('');
+  document.getElementById('miBtns').innerHTML=RARITIES.map(r=>`<button class="fBtn${r==='All'?' act':''}" onclick="setMiRar('${r}',this)">${r}</button>`).join('');
 }
-function setMiRar(r,btn){ miRar=r; document.querySelectorAll('#miBtns .fBtn').forEach(b=>b.classList.remove('act')); btn.classList.add('act'); renderMagic(); }
+function setMiRar(r,btn){ miRar=r; setFilterBtn('#miBtns',btn); renderMagic(); }
 function renderMagic(){
   if(!D) return;
   const q=(document.getElementById('miSearch').value||'').toLowerCase();
@@ -1283,10 +1140,9 @@ function renderMagic(){
   else if(sort==='hi') items.sort((a,b)=>parsePrice(b.p)-parsePrice(a.p));
   else items.sort((a,b)=>(RAR_ORDER[a.r]||0)-(RAR_ORDER[b.r]||0));
   document.getElementById('miCount').textContent=`${items.length} items`;
-  document.getElementById('miGrid').innerHTML=items.map(item=>{
-    const badges=`${item.r?`<span class="cBadge ${rarClass(item.r)}">${item.r}</span>`:''}${item.t?`<span class="cBadge bCommon">${item.t}</span>`:''}${item.a?`<span class="cBadge bAttune">Attunement</span>`:''}`;
-    return itemRow(item,'mi',badges);
-  }).join('')||'<div class="emptyMsg">No magic items found.</div>';
+  document.getElementById('miGrid').innerHTML=items.map(item=>itemRow(item,'mi',
+    `${item.r?`<span class="cBadge ${rarClass(item.r)}">${item.r}</span>`:''}${item.t?`<span class="cBadge bCommon">${item.t}</span>`:''}${item.a?'<span class="cBadge bAttune">Attunement</span>':''}`
+  )).join('')||'<div class="emptyMsg">No magic items found.</div>';
   markRows();
 }
 
@@ -1301,18 +1157,16 @@ function renderServices(){
 function renderVault(){
   if(!D) return;
   document.getElementById('vaultGrid').innerHTML=D.vault.map(item=>`<div class="vaultRow">
-    <span class="vrName" onmouseenter="showTooltip(event,${JSON.stringify(item).replace(/"/g,'&quot;')})" onmouseleave="hideTooltip()">${item.n}</span>
+    <span class="vrName" onmouseenter="showTooltip(event,${esc(item)})" onmouseleave="hideTooltip()">${item.n}</span>
     ${item.d?`<span class="vrDesc">${item.d.substring(0,180)}${item.d.length>180?'…':''}</span>`:''}
     <span class="vrTag">★ Vault</span>
   </div>`).join('');
 }
 
-// Close modals on bg click
+// ── MODAL & DROPDOWN CLOSE HANDLERS ──────────────────────────────────────────
 document.querySelectorAll('.modalBg').forEach(m=>{
   m.addEventListener('click',e=>{ if(e.target===m) m.classList.remove('open'); });
 });
-
-// Close dropdowns on outside click
 document.addEventListener('click',e=>{
   if(!e.target.closest('.wlSearchWrap')&&!e.target.closest('#wlDrop')) document.getElementById('wlDrop').classList.remove('open');
   if(!e.target.closest('#vSellName')&&!e.target.closest('#vSellDrop')) document.getElementById('vSellDrop').classList.remove('open');
